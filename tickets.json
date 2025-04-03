@@ -1,0 +1,216 @@
+[
+    {
+        "fields": {
+          "project": {
+            "key": "FRONT"
+          },
+          "summary": "Login Page UI Test",
+          "description": "Verify that all UI elements on the login page are correctly displayed and functional across different devices and browsers. Ensure the login button, input fields, and error messages appear as expected.",
+          "issuetype": {
+            "name": "Bug"
+          },
+          "priority": {
+            "name": "High"
+          },
+          "assignee": {
+            "name": "qa_engineer"
+          },
+          "labels": ["frontend", "login", "ui-test"],
+          "customfield_12345": "Scenario: Verify login button visibility\nGiven I am on the login page\nWhen I inspect the UI elements\nThen I should see a 'Login' button\n\nScenario: Ensure error message appears for incorrect credentials\nGiven I am on the login page\nWhen I enter an incorrect username and password\nAnd I click the 'Login' button\nThen I should see an error message 'Invalid credentials'\n\nScenario: Verify responsive design on mobile\nGiven I am using a mobile device\nWhen I navigate to the login page\nThen the login form should be fully visible and responsive"
+        },
+        "update": {
+          "comment": [
+            {
+              "add": {
+                "body": "Let's double-check that the login button is visible on smaller screens—there was an issue last sprint with it getting cut off on iPhones."
+              }
+            },
+            {
+              "add": {
+                "body": "Error messages need to be clear and noticeable. Maybe we should test different screen reader tools too?"
+              }
+            },
+            {
+              "add": {
+                "body": "Can we confirm if there's a delay when hitting 'Login' before the error message appears? We want to make sure users get immediate feedback."
+              }
+            },
+            {
+              "add": {
+                "body": "Tested this on Chrome and Firefox so far—can someone run a quick check on Safari and Edge?"
+              }
+            }
+          ]
+        }
+      },
+
+      {
+        "fields": {
+          "project": { "key": "FRONT" },
+          "summary": "Add to Cart Functionality",
+          "description": "Ensure users can successfully add products to their cart from product pages and search results. Validate that the cart updates in real-time and persists after page refresh.",
+          "issuetype": { "name": "Bug" },
+          "priority": { "name": "Critical" },
+          "assignee": { "name": "qa_engineer" },
+          "labels": ["frontend", "cart", "ui-test"],
+          "customfield_12345": "Scenario: Add a product to the cart\nGiven I am on a product page\nWhen I click 'Add to Cart'\nThen the product should appear in my cart\n\nScenario: Ensure cart persists after refresh\nGiven I have added items to my cart\nWhen I refresh the page\nThen my cart should still contain the items\n\nScenario: Adding multiple quantities of the same product\nGiven I am on a product page\nWhen I add the same item multiple times\nThen the cart should update with the correct quantity"
+        },
+        "update": {
+          "comment": [
+            { "add": { "body": "Noticed an issue where the cart count doesn’t update immediately—might be a delay in the UI?" } },
+            { "add": { "body": "Can we check if the cart persists in incognito mode too? Some users reported items disappearing after closing the tab." } },
+            { "add": { "body": "Let’s confirm the behavior for adding out-of-stock items—should we show an error or disable the button?" } }
+          ]
+        }
+      },
+
+      {
+        "fields": {
+          "project": { "key": "FRONT" },
+          "summary": "Search Bar Testing",
+          "description": "Validate the search functionality to ensure users can find products efficiently. Check that search results are accurate and autocomplete works correctly.",
+          "issuetype": { "name": "Bug" },
+          "priority": { "name": "Medium" },
+          "assignee": { "name": "qa_engineer" },
+          "labels": ["frontend", "search", "ui-test"],
+          "customfield_12345": "Scenario: Search for an existing product\nGiven I am on the homepage\nWhen I type 'Laptop' in the search bar\nThen I should see a list of laptops\n\nScenario: Validate no results message\nGiven I am on the homepage\nWhen I search for 'randomtext123'\nThen I should see a message saying 'No results found'"
+        },
+        "update": {
+          "comment": [
+            { "add": { "body": "Let’s test with partial searches—does 'lap' return 'laptop' results?" } },
+            { "add": { "body": "Can we confirm if special characters break the search? Users might accidentally enter a space at the end." } }
+          ]
+        }
+      },
+      
+      {
+        "fields": {
+          "project": { "key": "FRONT" },
+          "summary": "Checkout Process Validation",
+          "description": "Ensure the checkout process flows smoothly from the cart page to payment confirmation.",
+          "issuetype": { "name": "Bug" },
+          "priority": { "name": "High" },
+          "assignee": { "name": "qa_engineer" },
+          "labels": ["frontend", "checkout", "ui-test"]
+        },
+        "update": {
+          "comment": [
+            { "add": { "body": "Anyone else notice a slight lag when moving from the cart to checkout? Let’s dig into that." } },
+            { "add": { "body": "We should confirm what happens when a user tries to check out with an empty cart—error message should be clear." } }
+          ]
+        }
+      },
+      
+      {
+        "fields": {
+          "project": { "key": "FRONT" },
+          "summary": "Product Image Gallery",
+          "description": "Test the image carousel functionality on product pages to ensure smooth navigation between images.",
+          "issuetype": { "name": "Bug" },
+          "priority": { "name": "Medium" },
+          "assignee": { "name": "qa_engineer" },
+          "labels": ["frontend", "product", "ui-test"]
+        },
+        "update": {
+          "comment": [
+            { "add": { "body": "Can we check if swiping works on mobile? Some users might expect touch gestures." } },
+            { "add": { "body": "Let’s verify if the zoom feature works on all images, not just the first one." } }
+          ]
+        }
+      },
+
+      {
+  "fields": {
+    "project": { "key": "FRONT" },
+    "summary": "Promo Code Application",
+    "description": "Ensure promo codes can be applied at checkout and the discount is reflected correctly.",
+    "issuetype": { "name": "Bug" },
+    "priority": { "name": "High" },
+    "assignee": { "name": "qa_engineer" },
+    "labels": ["frontend", "checkout", "promo"]
+  },
+  "update": {
+    "comment": [
+      { "add": { "body": "What happens if a user tries to stack multiple promo codes? Let’s confirm the expected behavior." } },
+      { "add": { "body": "There’s a delay in the discount being displayed—might need to check API response times." } }
+    ]
+  }
+},
+
+{
+    "fields": {
+      "project": { "key": "FRONT" },
+      "summary": "Payment Gateway Testing",
+      "description": "Ensure payment transactions are processed correctly and users receive proper feedback on success or failure.",
+      "issuetype": { "name": "Bug" },
+      "priority": { "name": "Critical" },
+      "assignee": { "name": "qa_lead" },
+      "labels": ["frontend", "payment", "gateway"]
+    },
+    "update": {
+      "comment": [
+        { "add": { "body": "Seems like payments are failing for some test cards—can someone verify with Stripe logs?" } },
+        { "add": { "body": "Let’s add a test case for expired cards to ensure users get a proper error message." } }
+      ]
+    }
+  },
+
+  {
+    "fields": {
+      "project": { "key": "FRONT" },
+      "summary": "Mobile Responsiveness Test",
+      "description": "Ensure the website layout adapts properly on mobile devices.",
+      "issuetype": { "name": "Bug" },
+      "priority": { "name": "High" },
+      "assignee": { "name": "qa_engineer" },
+      "labels": ["frontend", "mobile", "ui-test"],
+      "customfield_12345": "Scenario: Check homepage on mobile\nGiven I am using a mobile device\nWhen I navigate to the homepage\nThen the layout should be mobile-friendly"
+    },
+    "update": {
+      "comment": [
+        { "add": { "body": "Navbar was overlapping on some Android devices last sprint—let’s confirm if that’s fixed." } },
+        { "add": { "body": "Can we test this on both portrait and landscape orientations?" } }
+      ]
+    }
+  },
+  
+  {
+    "fields": {
+      "project": { "key": "FRONT" },
+      "summary": "Wishlist Functionality",
+      "description": "Ensure users can add and remove products from their wishlist, and it persists after refresh.",
+      "issuetype": { "name": "Bug" },
+      "priority": { "name": "Medium" },
+      "assignee": { "name": "qa_engineer" },
+      "labels": ["frontend", "wishlist", "ui-test"],
+      "customfield_12345": "Scenario: Add item to wishlist\nGiven I am on a product page\nWhen I click 'Add to Wishlist'\nThen the item should appear in my wishlist"
+    },
+    "update": {
+      "comment": [
+        { "add": { "body": "Does the wishlist persist after logging out and back in? Let’s verify that behavior." } },
+        { "add": { "body": "Let’s check if there’s a notification when adding an item—users should get some feedback." } }
+      ]
+    }
+  },
+
+  {
+    "fields": {
+      "project": { "key": "FRONT" },
+      "summary": "Logout Feature",
+      "description": "Ensure users can successfully log out and their session is cleared.",
+      "issuetype": { "name": "Bug" },
+      "priority": { "name": "Low" },
+      "assignee": { "name": "qa_engineer" },
+      "labels": ["frontend", "logout", "ui-test"],
+      "customfield_12345": "Scenario: Successful logout\nGiven I am logged in\nWhen I click 'Logout'\nThen I should be redirected to the login page"
+    },
+    "update": {
+      "comment": [
+        { "add": { "body": "Can we verify that session cookies are cleared on logout?" } },
+        { "add": { "body": "If a user logs out and presses the back button, do they get back into the session? Might need to check cache settings." } }
+      ]
+    }
+  }
+  
+
+]
